@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[a4paper, margin=0.5cm]{geometry}
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+\usepackage{tikz}
+\pagestyle{empty}
+\parskip=0pt
+\begin{document}
+\parindent=0pt
+
+% \newcommand\krouzek[1]{
+% \begin{tikzpicture}
+%   % poloměr kruhu
+%   \def\radius{22mm}
+
+%   % ořez na kruh
+%   \clip (0,0) circle (\radius);
+
+%   % volitelně: obrys kruhu
+%   \draw (0,0) circle (\radius);
+
+%   % text vyplňující kruh
+%   \node[
+%     align=justify,
+%     inner sep=6mm,
+%     text width=40mm
+%   ] at (0,0)
+%   {\bfseries\raggedright
+%     \null\hfill\vbox{#1}\hfill\null
+%   };
+% \end{tikzpicture}
+% }
+
+\newcommand\krouzek[3][white]{%
+\begin{tikzpicture}
+  \def\radius{22mm}
+
+  \fill[#1] (0,0) circle (\radius);
+  \clip (0,0) circle (\radius);
+  \draw (0,0) circle (\radius);
+
+  % \node[
+  %   align=center,
+  %   inner sep=6mm,
+  %   text width=36mm
+  % ] at (0,0)
+  \node[
+  align=left,
+  inner sep=6mm,
+  text width=36mm,
+  xshift=#2
+] at (0,0)
+  {\bfseries
+    #3
+  };
+\end{tikzpicture}\hspace{1.5cm}%
+}
+
+\def\zmenime{%
+  \krouzek[red!50]{5mm}{\Large Společně\\ změníme víc\normalsize \\[\baselineskip]\small Odbory SOVA\\ PedF UK}%
+}
+\def\pece{
+  \krouzek{7mm}{\Large \textcolor{red}{Odbory\\ jsou péče}\normalsize \\[\baselineskip]\small Odbory SOVA\\ PedF UK}%
+}
+\def\bargain{
+  \krouzek{3mm}{\large United\\[-1mm]we bargain,\\[1pt]divided we beg\small\\[\baselineskip] \textcolor{red}{SOVA PedF UK}}%
+}
+
+\def\vyplnenapece{
+  \krouzek{3mm}{\LARGE \hspace{8pt} odbory\\[-6pt]\hspace{-0pt} jsou péče\\[-8pt] \hspace{-8pt}\textcolor{red}{odbory jsou}\\[-6pt]\hspace{-12pt} \textcolor{red}{péče} odbory\\[-8pt]\hspace{0pt} jsou péče\\[-2pt]\hspace{8pt} odbory}%
+}
+\def\radek{1.5cm}
+\zmenime
+\zmenime
+\zmenime\\[\radek]
+\zmenime
+\zmenime
+\zmenime\\[\radek]
+\zmenime
+\zmenime
+\zmenime\\[\radek]
+\pece
+\pece
+\pece\\[\radek]
+\pece
+\pece
+\pece\\[\radek]
+\pece
+\pece
+\pece\\[\radek]
+\bargain
+\bargain
+\bargain\\[\radek]
+\bargain
+\bargain
+\bargain\\[\radek]
+\bargain
+\bargain
+\bargain\\[\radek]
+\vyplnenapece
+\vyplnenapece
+\vyplnenapece\\[\radek]
+\vyplnenapece
+\vyplnenapece
+\vyplnenapece\\[\radek]
+\vyplnenapece
+\vyplnenapece
+\vyplnenapece\\[\radek]
+% \krouzek{SOVA 2024}
+% \krouzek{SOVA 2024}
+% \krouzek{SOVA 2024}\\[1cm]
+% \krouzek{SOVA 2024}
+% \krouzek{SOVA 2024}
+\end{document}
