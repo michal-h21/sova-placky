@@ -36,7 +36,9 @@
 \newcommand\krouzek[3][white]{%
 \begin{tikzpicture}
   \def\radius{22mm}
+  \def\bigradius{27mm}
 
+  \draw (0,0) circle (\bigradius);
   \fill[#1] (0,0) circle (\radius);
   \clip (0,0) circle (\radius);
   \draw (0,0) circle (\radius);
